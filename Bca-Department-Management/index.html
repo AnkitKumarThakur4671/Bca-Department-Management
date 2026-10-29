@@ -11,83 +11,56 @@
 </head>
 
 <body>
-
     <!-- Header -->
     <header>
         <h1>Patna College</h1>
         <p>BCA Department Management System</p>
     </header>
-
     <div class="container">
-
         <!-- Sidebar -->
         <aside class="sidebar">
-
             <h2>Dashboard</h2>
-
             <button onclick="showHome()">Home</button>
-
             <button onclick="showStudentInfo()">Student Info</button>
-
             <button onclick="showSubjectInfo()">Subject Info</button>
-
+            <button onclick="showTeacherInfo()">Teacher Information</button>
         </aside>
-
         <!-- Main Content -->
         <main class="content">
-
             <!-- Home Section -->
             <section id="homeSection">
-
                 <h2>Welcome to BCA Department</h2>
-
                 <p>
                     Welcome to the BCA Department Management System.
                 </p>
-
                 <p>
                     Click on Student Info to view student details.
                 </p>
-
                 <p>
                     Click on Subject Info to explore semester-wise subjects.
                 </p>
-
+                <p>Click on Teacher Info to view semester-wise subject teachers.</p>
             </section>
-
-
             <!-- Student Information Section -->
             <section id="studentSection" style="display: none;">
-
                 <h2>Student Information</h2>
-
                 <p>
                     Enter the student roll number to get complete details.
                 </p>
-
                 <div class="search-box">
-
                     <label for="rollNo">Enter Student Roll No:</label>
-
                     <input
                         type="number"
                         id="rollNo"
                         placeholder="Enter roll number"
                         oninput="clearResult()"
                     >
-
                     <button onclick="searchStudent()">Search</button>
-
                 </div>
-
                 <div id="result"></div>
-
             </section>
-
-
             <!-- Subject Information Section -->
             <section id="subjectSection" style="display: none;">
-
                 <!-- Semester Selection Page -->
                 <div id="semesterPage">
 
@@ -108,8 +81,6 @@
                             <p>View subjects for Semester 1</p>
                             <span class="semester-arrow">→</span>
                         </button>
-
-
                         <button
                             class="semester-card semester-two"
                             onclick="showSemesterSubjects(2)"
@@ -190,6 +161,74 @@
                 </div>
 
             </section>
+            <!-- Teacher Information Section -->
+<section id="teacherSection" style="display: none;">
+
+    <h2>Teacher Information</h2>
+
+    <p class="section-description">
+        Select a semester to view subject-wise teacher information.
+    </p>
+
+    <div class="semester-grid">
+
+        <button class="semester-card semester-one" onclick="showSemesterTeachers(1)">
+            <span class="semester-icon">👨‍🏫</span>
+            <h3>Semester 1</h3>
+            <p>View teachers for Semester 1</p>
+            <span class="semester-arrow">→</span>
+        </button>
+
+        <button class="semester-card semester-two" onclick="showSemesterTeachers(2)">
+            <span class="semester-icon">👨‍🏫</span>
+            <h3>Semester 2</h3>
+            <p>View teachers for Semester 2</p>
+            <span class="semester-arrow">→</span>
+        </button>
+
+        <button class="semester-card semester-three" onclick="showSemesterTeachers(3)">
+            <span class="semester-icon">👨‍🏫</span>
+            <h3>Semester 3</h3>
+            <p>View teachers for Semester 3</p>
+            <span class="semester-arrow">→</span>
+        </button>
+
+        <button class="semester-card semester-four" onclick="showSemesterTeachers(4)">
+            <span class="semester-icon">👨‍🏫</span>
+            <h3>Semester 4</h3>
+            <p>View teachers for Semester 4</p>
+            <span class="semester-arrow">→</span>
+        </button>
+
+        <button class="semester-card semester-five" onclick="showSemesterTeachers(5)">
+            <span class="semester-icon">👨‍🏫</span>
+            <h3>Semester 5</h3>
+            <p>View teachers for Semester 5</p>
+            <span class="semester-arrow">→</span>
+        </button>
+
+        <button class="semester-card semester-six" onclick="showSemesterTeachers(6)">
+            <span class="semester-icon">👨‍🏫</span>
+            <h3>Semester 6</h3>
+            <p>View teachers for Semester 6</p>
+            <span class="semester-arrow">→</span>
+        </button>
+
+    </div>
+
+    <div id="teacherSubjectsPage" style="display: none;">
+
+        <button class="back-button" onclick="backToTeacherSemesters()">
+            ← Back to Semesters
+        </button>
+
+        <h2 id="teacherSemesterHeading">Semester 1 — Teacher Information</h2>
+
+        <div id="teacherSubjectsList" class="subjects-grid"></div>
+
+    </div>
+
+</section>
 
         </main>
 
