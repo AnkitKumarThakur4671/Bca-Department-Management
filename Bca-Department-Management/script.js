@@ -194,8 +194,6 @@ const semesterSubjects = {
         }
     ]
 };
-
-
 // ==========================================
 // SEMESTER-WISE TEACHER NAMES
 // A se T tak placeholder names
